@@ -2,7 +2,7 @@
 import Costumer from "App/Models/Customer";
 
 export default class CustomersController {
-  async index({ auth, request }) {
+  async index({ auth }) {
     const costumers = await Costumer.query().where("user_id", auth.user.id);
     return costumers;
   }
